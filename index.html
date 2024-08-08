@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Datos de Equipos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Base de Datos</h1>
+        <form id="addForm">
+            <label for="numeroPC">Número de PC:</label>
+            <input type="number" id="numeroPC" min="1" required>
+            <label for="nombreEquipo">Nombre del Equipo:</label>
+            <input type="text" id="nombreEquipo" required>
+            <label for="nombreUsuario">Nombre de Usuario:</label>
+            <input type="text" id="nombreUsuario" required>
+            <label for="contrasena">Contraseña:</label>
+            <input type="text" id="contrasena" required>
+            <button type="button" class="button add" onclick="addRow()">Agregar</button>
+        </form>
+        <table id="equiposTable">
+            <thead>
+                <tr>
+                    <th>Número de PC</th>
+                    <th>Nombre del Equipo</th>
+                    <th>Nombre de Usuario</th>
+                    <th>Contraseña</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <i class="fas fa-check-circle modal-icon" style="color: #28a745;"></i>
+            <p class="modal-message">Tus datos han sido guardados correctamente.</p>
+            <button class="modal-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="errorModal" class="modal">
+        <div class="modal-content error">
+            <i class="fas fa-times-circle modal-icon" style="color: #dc3545;"></i>
+            <p class="modal-message">Ocurrió un error al guardar los datos.</p>
+            <button class="modal-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <div id="deletedModal" class="modal">
+        <div class="modal-content deleted">
+            <i class="fas fa-check-circle modal-icon" style="color: #007BFF;"></i>
+            <p class="modal-message">Ha sido eliminada correctamente.</p>
+            <button class="modal-button" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
